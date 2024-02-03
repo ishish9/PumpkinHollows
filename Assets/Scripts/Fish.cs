@@ -36,7 +36,9 @@ public class Fish : MonoBehaviour
             if (hit.collider.tag == "Ground")
             {
                 Debug.Log("Hit Wall");
-               // hitpoint.transform.parent = hit.transform;
+                // hitpoint.transform.parent = hit.transform;
+                // hitpoint.transform.parent = hit.transform;
+
             }
         }
     }
