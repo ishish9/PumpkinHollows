@@ -2,6 +2,18 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
+/[Aa]ssets/AllIn1VfxToolkit/
+/[Aa]ssets/Amazing Assets/
+/[Aa]ssets/Cube World Set URP - Proto Series/
+/[Aa]ssets/DinoFracture/
+/[Aa]ssets/DynamicMeshCutter/
+/[Aa]ssets/Import/
+/[Aa]ssets/KUBIKOS - World/
+/[Aa]ssets/LiquidFire Package 4 - BSH games/
+/[Aa]ssets/Polyart/
+/[Aa]ssets/polyperfect/
+/[Aa]ssets/Rutz/
+/[Aa]ssets/Stylized Grass Shader/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/

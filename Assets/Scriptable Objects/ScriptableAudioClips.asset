@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e499e7029de957c4785faeae3ca1e081, type: 3}
+  m_Name: ScriptableAudioClips
+  m_EditorClassIdentifier: 
+  Move: {fileID: 0}
+  Jump: {fileID: 8300000, guid: 405f4b3a61ac2bc44986bb24adda544f, type: 3}
+  JumpDouble: {fileID: 8300000, guid: 2fc081d5127d3dd41b6b5e28207d8e05, type: 3}
+  Land: {fileID: 8300000, guid: 6477295c2eecf9f489571e7d4c174648, type: 3}
+  Stomp: {fileID: 8300000, guid: 49327e4f3a221a54781fdb60890d7d1b, type: 3}
+  CollectCoin: {fileID: 8300000, guid: ad66b4d927c6fb64ea46a05b703b99c8, type: 3}
+  GetPowerUp: {fileID: 8300000, guid: 84013c8a53537244db22374387928104, type: 3}
+  BulletImpact: {fileID: 0}
+  ChestOpen: {fileID: 8300000, guid: 19750be5d145e884b81d7f176f60478d, type: 3}
+  TaDa: {fileID: 8300000, guid: 742ff60ecdf74f840bde94bc2affacb2, type: 3}
+  TaDaBad: {fileID: 8300000, guid: 54445fd99bcaf6545a5aa2ac543d6f9b, type: 3}
