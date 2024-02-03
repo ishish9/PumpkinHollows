@@ -37,8 +37,6 @@ public class Fish : MonoBehaviour
             {
                 Debug.Log("Hit Wall");
                 // hitpoint.transform.parent = hit.transform;
-                // hitpoint.transform.parent = hit.transform;
-
             }
         }
     }
