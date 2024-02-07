@@ -21,6 +21,10 @@ public class AudioClips : ScriptableObject
     public AudioClip TaDa;
     public AudioClip TaDaBad;
 
+    [Header("Door Sounds")]
+    public AudioClip CreekyDoorOpen;
+
+
 
 
 }

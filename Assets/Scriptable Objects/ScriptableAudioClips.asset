@@ -23,3 +23,4 @@ MonoBehaviour:
   ChestOpen: {fileID: 8300000, guid: 19750be5d145e884b81d7f176f60478d, type: 3}
   TaDa: {fileID: 8300000, guid: 742ff60ecdf74f840bde94bc2affacb2, type: 3}
   TaDaBad: {fileID: 8300000, guid: 54445fd99bcaf6545a5aa2ac543d6f9b, type: 3}
+  CreekyDoorOpen: {fileID: 8300000, guid: 120aaa3606b513b4c9777e7134736365, type: 3}
