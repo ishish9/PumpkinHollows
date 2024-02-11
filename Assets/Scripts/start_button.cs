@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class start_button : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class start_button : MonoBehaviour
     [SerializeField] private GameObject pumpkin;
     [SerializeField] private GameObject start;
     [SerializeField] private AudioClip Music;
+    public UnityEvent enableUiElements;
 
     public void startbutton()
     {
@@ -17,5 +19,6 @@ public class start_button : MonoBehaviour
         menu.SetActive(false);
         pumpkin.SetActive(true);
         start.SetActive(false);
+        enableUiElements.Invoke();
     }   
 }
