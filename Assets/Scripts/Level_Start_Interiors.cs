@@ -21,19 +21,25 @@ public class Level_Start_Interiors : MonoBehaviour
     }
     void Start()
     {
-        Transition.Play(transitionEffectName, 0, 0.0f);
         switch (LevelTransition.levelPosition)
         {
+            case "":
+                positionSelect = 3;
+                rb.MovePosition(playerStartPosition[positionSelect].position);
+                break;
             case "Library":
+                Transition.Play(transitionEffectName, 0, 0.0f);
                 AudioManager.Instance.PlaySound(TransitionSound);
                 positionSelect = 0;
                 rb.MovePosition(playerStartPosition[positionSelect].position);
                 break;
             case "Home1":
+                Transition.Play(transitionEffectName, 0, 0.0f);
                 positionSelect = 1;
                 rb.MovePosition(playerStartPosition[positionSelect].position);
                 break;
             case "Windmill":
+                Transition.Play(transitionEffectName, 0, 0.0f);
                 positionSelect = 2;
                 rb.MovePosition(playerStartPosition[positionSelect].position);
                 break;           

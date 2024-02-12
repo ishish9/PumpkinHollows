@@ -4,7 +4,9 @@ public class BushShake : MonoBehaviour
 {
     [SerializeField] private string ShakeAnimation;
     [SerializeField] private Animator Animation = null;
+    [SerializeField] private ParticleSystem PS;
     [SerializeField] private AudioClip ShakeClip;
+    [SerializeField] private bool emitsCoin;
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -12,6 +14,12 @@ public class BushShake : MonoBehaviour
         {
             AudioManager.Instance.PlaySound(ShakeClip);
             Animation.Play(ShakeAnimation, 0, 0.0f);
-        }
+        } 
+
+        if (emitsCoin)
+        {
+            emitsCoin = false;
+            PS.Play();
+        }                    
     }
 }
