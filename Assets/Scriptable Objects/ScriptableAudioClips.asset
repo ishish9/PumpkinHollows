@@ -18,8 +18,9 @@ MonoBehaviour:
   Land: {fileID: 8300000, guid: 6477295c2eecf9f489571e7d4c174648, type: 3}
   Stomp: {fileID: 8300000, guid: 49327e4f3a221a54781fdb60890d7d1b, type: 3}
   CollectCoin: {fileID: 8300000, guid: ad66b4d927c6fb64ea46a05b703b99c8, type: 3}
+  CollectCoinBush: {fileID: 8300000, guid: 7c2efad634b3a5d4eb9ec6795b87670d, type: 3}
+  BushShake: {fileID: 8300000, guid: b0c1b7a16983d8942b6451fb447d59ad, type: 3}
   GetPowerUp: {fileID: 8300000, guid: 84013c8a53537244db22374387928104, type: 3}
-  BulletImpact: {fileID: 0}
   ChestOpen: {fileID: 8300000, guid: 19750be5d145e884b81d7f176f60478d, type: 3}
   TaDa: {fileID: 8300000, guid: 742ff60ecdf74f840bde94bc2affacb2, type: 3}
   TaDaBad: {fileID: 8300000, guid: 54445fd99bcaf6545a5aa2ac543d6f9b, type: 3}

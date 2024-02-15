@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class start_button : MonoBehaviour
 {
@@ -21,4 +20,9 @@ public class start_button : MonoBehaviour
         start.SetActive(false);
         enableUiElements.Invoke();
     }   
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene("L1");
+    }
 }

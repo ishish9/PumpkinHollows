@@ -13,8 +13,10 @@ public class AudioClips : ScriptableObject
 
     [Header("Collectable Sounds")]
     public AudioClip CollectCoin;
+    public AudioClip CollectCoinBush;
+    public AudioClip BushShake;
+
     public AudioClip GetPowerUp;
-    public AudioClip BulletImpact;
 
     [Header("Chest Sounds")]
     public AudioClip ChestOpen;
