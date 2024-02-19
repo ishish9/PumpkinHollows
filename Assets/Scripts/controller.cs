@@ -16,7 +16,7 @@ public class controller : MonoBehaviour
     //public PlayerInput playerInput;
     private Vector2 move;
     PlayerInputActions playerActionMap;
-    public ShakeCamera shakeCamera;
+    private ShakeCamera shakeCamera;
     public InputActionMap actionMap;
     public InputAction movementAction;
     private bool PlayerIsGrounded = true;
@@ -35,6 +35,7 @@ public class controller : MonoBehaviour
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        shakeCamera = GetComponent<ShakeCamera>();
     }
 
     private void OnEnable()
