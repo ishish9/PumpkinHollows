@@ -17,8 +17,8 @@ TagManager:
   - Player
   - Coin
   - Ground
-  - 
-  - 
+  - RigidBody
+  - Tree
   - 
   - 
   - 

@@ -17,6 +17,7 @@ public class controller : MonoBehaviour
     private Vector2 move;
     PlayerInputActions playerActionMap;
     private ShakeCamera shakeCamera;
+    private ThumpPhysicsForce thumpPhysicsForce;
     public InputActionMap actionMap;
     public InputAction movementAction;
     private bool PlayerIsGrounded = true;
@@ -36,6 +37,7 @@ public class controller : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
         shakeCamera = GetComponent<ShakeCamera>();
+        thumpPhysicsForce = GetComponent<ThumpPhysicsForce>();
     }
 
     private void OnEnable()
@@ -144,6 +146,7 @@ public class controller : MonoBehaviour
             if (stompUsed == true)
             {
                 stompUsed = false;
+                thumpPhysicsForce.EmitForce();
                 StartCoroutine(shakeCamera.Shake(.15f, .4f));
             }
         }

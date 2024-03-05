@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class NpcSpeech : ScriptableObject
 {
-    [Header("NPC")]
-    public string npcWouldLikeBook; // 0
-    public string npcLostKey; // 1
+    [Header("LibraryNPCSpeech")]
+    public string npcWouldLikeBook0; // 0
+    public string npcWouldLikeBook1; // 1
+    public string npcWouldLikeBook2; // 2
 
+    [Header("FishingNPCSpeech")]
+    public string npcLostKey0; // 0
+    public string npcLostKey1; // 1
 
 
 

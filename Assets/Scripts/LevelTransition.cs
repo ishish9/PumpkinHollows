@@ -13,8 +13,8 @@ public class LevelTransition : MonoBehaviour
     public static string levelPosition;
     [SerializeField] private string scene;
     [SerializeField] private float transitionTime;
-
     public static LevelTransition instance;
+    private bool triggerEnabled = true;
 
     private void Awake()
     {
@@ -24,8 +24,9 @@ public class LevelTransition : MonoBehaviour
 
     public void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && triggerEnabled == true)
         {
+            triggerEnabled = false;
             levelPosition = levelStartPositionName;
             LevelLoad();
         }        

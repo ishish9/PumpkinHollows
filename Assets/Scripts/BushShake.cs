@@ -10,17 +10,28 @@ public class BushShake : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        int RandomCoin;
+        RandomCoin = Random.Range(0, 3);
         if (collider.gameObject.tag == "Player")
         {
             AudioManager.Instance.PlaySound(audioClip.BushShake);
             Animation.Play(ShakeAnimation, 0, 0.0f);
-        } 
-
-        if (emitsCoin)
+        }
+        
+        if (RandomCoin == 1 && emitsCoin)
         {
-            AudioManager.Instance.PlaySound(audioClip.CollectCoinBush);
+            EmitCoin();
             emitsCoin = false;
-            PS.Play();
-        }                    
+        } 
+        else
+        {
+            emitsCoin = false;
+        }
+    }
+
+    private void EmitCoin()
+    {
+        AudioManager.Instance.PlaySound(audioClip.CollectCoinBush);
+        PS.Play();
     }
 }

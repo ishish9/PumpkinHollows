@@ -9,9 +9,11 @@ public class NPCTalkTrigger : MonoBehaviour
     [SerializeField] private Animator FadeIn = null;
     [SerializeField] private Animator FadeOut = null;
     [SerializeField] private Animator SpeechBarTop = null;
-    [SerializeField] private Animator SpeechBarBottom= null;
+    [SerializeField] private Animator SpeechBarBottom = null;
     [SerializeField] private int selectSpeech;
     private bool speechActive = true;
+    private bool firstSpeech0 = true;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,55 +29,75 @@ public class NPCTalkTrigger : MonoBehaviour
             switch (selectSpeech)
             {
                 case 0:
-                    npcSpeechUI.text = npcSpeech.npcWouldLikeBook.ToString();
+                    int selectNpcSpeech = Random.Range(0, 3);
+                    if (firstSpeech0)
+                    {
+                        firstSpeech0 = false;
+                        npcSpeechUI.text = npcSpeech.npcWouldLikeBook0.ToString();
+                    }
+                    else
+                    {
+                        switch (selectNpcSpeech)
+                        {
+                            case 0:
+                                npcSpeechUI.text = npcSpeech.npcWouldLikeBook0.ToString();
+                                break;
+                            case 1:
+                                npcSpeechUI.text = npcSpeech.npcWouldLikeBook1.ToString();
+                                break;
+                            case 2:
+                                npcSpeechUI.text = npcSpeech.npcWouldLikeBook2.ToString();
+                                break;
+                        }
+                    }
+                    
                     break;
                 case 1:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 2:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 3:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 4:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 5:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 6:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 7:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 8:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 9:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 10:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 11:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 12:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 13:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 14:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
                 case 15:
-                    npcSpeechUI.text = npcSpeech.npcLostKey.ToString();
+                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;
             }
-
         }
     }
 

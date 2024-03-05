@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -12,8 +10,6 @@ public class Level_Start_Interiors : MonoBehaviour
     [SerializeField] private Transform[] playerStartPosition;
     [SerializeField] private AudioClip TransitionSound;
     private Rigidbody rb;
-
-
 
     private void Awake()
     {
