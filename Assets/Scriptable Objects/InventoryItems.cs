@@ -1,15 +1,21 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ScriptableInventoryItems", menuName = "InventoryItemScriptable")]
+public enum ItemType
+{
+    Collectables,
+    Type,
+    Apple,
+    Book,
+    Key,
+    Default
+}
 
-public class InventoryItems : ScriptableObject
+public abstract class InventoryItems : ScriptableObject
 {
     [Header("Inventory Items")]
-    public GameObject Lost_Key;
-    public GameObject e;
-
-
-   
-
+    public ItemType type;
+    public GameObject prefab;
+    [TextArea(15,20)]
+    public string description;
 
 }

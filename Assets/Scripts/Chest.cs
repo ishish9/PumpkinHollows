@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
+    [SerializeField] private ChestType chestType;
     [SerializeField] private int ObjSpawnAmount;
     [SerializeField] private float DelayBetweenObjSpawn;
     [SerializeField] private int spawnForce;
     private int spawnCount;
     [SerializeField] private GameObject Prefab;
+    [SerializeField] private GameObject keyPrefab;
     [SerializeField] private GameObject light;
     [SerializeField] private ParticleSystem ParticlePrefab;
     [SerializeField] private Transform spawnLocation;
@@ -16,96 +18,101 @@ public class Chest : MonoBehaviour
     [SerializeField] private Animator ChestUnlock = null;
     [SerializeField] private Animator ChestFullyOpen = null;
     [SerializeField] private AudioClips audioClipObject;
-    [SerializeField] private bool CoinChest = false;
-    [SerializeField] private bool CrystalChest = false;
-    [SerializeField] private bool KeyChest = false;
-    [SerializeField] private bool MysteryChest = false;
-    [SerializeField] private bool EmptyChest = false;
+    private bool ChestUnopened = true;
     [SerializeField] private Vector3 Spread = new Vector3(0.1f, 0.1f, 0.1f);
-
-    
+    private Vector3 offset = new Vector3(0, 8, 0);
 
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && ChestUnopened == true)
         {
-        
-        if (CoinChest)
-        {
-            CoinChest = false;
-            AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
-            Chest_Open.Play("Chest_Open", 0, 0.0f);
-
-            StartCoroutine(openChest());
-
-            IEnumerator openChest()
+            switch (chestType)
             {
-                yield return new WaitForSeconds(1);
-                    light.SetActive(true);
-                AudioManager.Instance.PlaySound(audioClipObject.TaDa);
-                    ParticlePrefab.Play();
-                //InvokeRepeating("SpawnObject", 0, DelayBetweenObjSpawn);
-                //SpawnObject();   
+                case ChestType.Coins:
+                    ChestUnopened = false;
+                    AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
+                    Chest_Open.Play("Chest_Open", 0, 0.0f);
+
+                    StartCoroutine(openChest());
+
+                    IEnumerator openChest()
+                    {
+                        yield return new WaitForSeconds(1);
+                        light.SetActive(true);
+                        AudioManager.Instance.PlaySound(audioClipObject.TaDa);
+                        Instantiate(Prefab, transform.position + offset, Quaternion.identity);
+                        //ParticlePrefab.Play();
+                        //InvokeRepeating("SpawnObject", 0, DelayBetweenObjSpawn);
+                        //SpawnObject();
+                        
+                    }
+                    break;
+                    ///
+                case ChestType.Key:
+                    ChestUnopened = false;
+                    AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
+                    Chest_Open.Play("Chest_Open", 0, 0.0f);
+
+                    StartCoroutine(openChest0());
+
+                    IEnumerator openChest0()
+                    {
+                        yield return new WaitForSeconds(1);
+                        AudioManager.Instance.PlaySound(audioClipObject.TaDa);
+                        Instantiate(keyPrefab, transform.position + new Vector3(0, 3, 0), Quaternion.EulerRotation(0,0,90));
+                    }
+                    break;
+                    ///
+                case ChestType.Mystery:
+                    ChestUnopened = false;
+                    AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
+                    Chest_Open.Play("Chest_Open", 0, 0.0f);
+
+                    StartCoroutine(openChest1());
+
+                    IEnumerator openChest1()
+                    {
+                        yield return new WaitForSeconds(1);
+                        AudioManager.Instance.PlaySound(audioClipObject.TaDa);
+                    }
+                    break;
+                    ///
+                case ChestType.Empty:
+                    ChestUnopened = false;
+                    AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
+                    Chest_Open.Play("Chest_Open", 0, 0.0f);
+
+                    StartCoroutine(openChest2());
+
+                    IEnumerator openChest2()
+                    {
+                        yield return new WaitForSeconds(1);
+                        AudioManager.Instance.PlaySound(audioClipObject.TaDaBad);
+                    }
+                    break;
+                    ///
+                case ChestType.Crystal:
+                    ChestUnopened = false;
+                    AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
+                    Chest_Open.Play("Chest_Open", 0, 0.0f);
+
+                    StartCoroutine(openChest3());
+
+                    IEnumerator openChest3()
+                    {
+                        yield return new WaitForSeconds(1);
+                        AudioManager.Instance.PlaySound(audioClipObject.TaDa);
+                    }
+                    break;
+                    ///
+                case ChestType.Enemy:
+                    ChestUnopened = false;
+
+                    print("Why hello there good sir! Let me teach you about Trigonometry!");
+                    break;
             }
         }
-        else if (CrystalChest)
-        {
-            CrystalChest = false;
-            AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
-            Chest_Open.Play("Chest_Open", 0, 0.0f);
-
-            StartCoroutine(openChest());
-
-            IEnumerator openChest()
-            {
-                yield return new WaitForSeconds(1);
-                AudioManager.Instance.PlaySound(audioClipObject.TaDa);
-            }
-        }
-        else if (KeyChest)
-        {
-            KeyChest = false;
-            AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
-            Chest_Open.Play("Chest_Open", 0, 0.0f);
-
-            StartCoroutine(openChest());
-
-            IEnumerator openChest()
-            {
-                yield return new WaitForSeconds(1);
-                AudioManager.Instance.PlaySound(audioClipObject.TaDa);
-            }
-        }
-        else if (MysteryChest)
-        {
-            MysteryChest = false;
-            AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
-            Chest_Open.Play("Chest_Open", 0, 0.0f);
-
-            StartCoroutine(openChest());
-
-            IEnumerator openChest()
-            {
-                yield return new WaitForSeconds(1);
-                AudioManager.Instance.PlaySound(audioClipObject.TaDa);
-            }
-        }
-        else if (EmptyChest)
-        {
-            EmptyChest = false;
-            AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
-            Chest_Open.Play("Chest_Open", 0, 0.0f);
-
-            StartCoroutine(openChest());
-
-            IEnumerator openChest()
-            {
-                yield return new WaitForSeconds(1);
-                AudioManager.Instance.PlaySound(audioClipObject.TaDaBad);
-            }
-        }
-    }
     }
 
     private void SpawnObject()
@@ -124,5 +131,15 @@ public class Chest : MonoBehaviour
             CancelInvoke();
             spawnCount = 0;
         }            
+    }
+
+    public enum ChestType
+    {
+        Coins,
+        Key,
+        Mystery,
+        Empty,
+        Crystal,
+        Enemy
     }
 }
