@@ -10,8 +10,11 @@ public class Trigger1 : MonoBehaviour
     [SerializeField] private AudioClip doorClose;
     [SerializeField] private string openLeft;
     [SerializeField] private string openRight;
+    [SerializeField] private string closeLeft;
+    [SerializeField] private string closeRight;
     [SerializeField] private bool openTrig = false;
     [SerializeField] private bool closeTrig = false;
+    public GateAnimation gateAnimation;
     
     private void OnTriggerEnter(Collider collision)
     {
@@ -27,11 +30,17 @@ public class Trigger1 : MonoBehaviour
 
             else if (closeTrig)
             {
-                MainGateRight.Play(openRight, 0, 0.0f);
-                MainGateLeft.Play(openLeft, 0, 0.0f);
+                MainGateRight.Play(closeRight, 0, 0.0f);
+                MainGateLeft.Play(closeLeft, 0, 0.0f);
                 AudioManager.Instance.PlaySound(doorClose);
                 gameObject.SetActive(false);
             }
         }
+    }
+
+    public enum GateAnimation
+    {
+        GateOpen,
+        GateClose,
     }
 }

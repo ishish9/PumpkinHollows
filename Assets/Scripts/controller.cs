@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -54,7 +55,7 @@ public class controller : MonoBehaviour
 
     private void Update()
     {
-        move = playerActionMap.Player.Move.ReadValue<Vector2>();
+        move = playerActionMap.Player.Move.ReadValue<Vector2>();       
     }
 
     private void FixedUpdate()
@@ -157,5 +158,29 @@ public class controller : MonoBehaviour
         fallDamageStart = new Vector3(transform.position.x, transform.position.y, transform.position.z);
        // float dist = Vector3.Distance(fallDamageStart.position, fallDamageEnd.position);
 
+    }
+
+    public void ChangePlayerSpeed( int speed, float potionTime)
+    {
+        MovementSpeed = speed;
+        StartCoroutine(potionTimer());
+
+        IEnumerator potionTimer()
+        {
+            yield return new WaitForSeconds(potionTime);
+            MovementSpeed = 15;
+        }
+    }
+
+    public void ChangePlayerWeight()
+    {
+        rb.AddForce(new Vector3(0, 6, 0), ForceMode.Impulse);
+        StartCoroutine(potionTimer());
+
+        IEnumerator potionTimer()
+        {
+            yield return new WaitForSeconds(10);
+            rb.AddForce(new Vector3(0, 2, 0), ForceMode.Impulse);
+        }
     }
 }

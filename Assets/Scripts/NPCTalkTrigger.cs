@@ -13,7 +13,17 @@ public class NPCTalkTrigger : MonoBehaviour
     [SerializeField] private int selectSpeech;
     private bool speechActive = true;
     private bool firstSpeech0 = true;
+    private bool firstSpeech1 = true;
 
+    private void OnEnable()
+    {
+        
+    }
+
+    private void OnDisable()
+    {
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,7 +39,6 @@ public class NPCTalkTrigger : MonoBehaviour
             switch (selectSpeech)
             {
                 case 0:
-                    int selectNpcSpeech = Random.Range(0, 3);
                     if (firstSpeech0)
                     {
                         firstSpeech0 = false;
@@ -37,7 +46,7 @@ public class NPCTalkTrigger : MonoBehaviour
                     }
                     else
                     {
-                        switch (selectNpcSpeech)
+                        switch (Random.Range(0, 5))
                         {
                             case 0:
                                 npcSpeechUI.text = npcSpeech.npcWouldLikeBook0.ToString();
@@ -48,13 +57,43 @@ public class NPCTalkTrigger : MonoBehaviour
                             case 2:
                                 npcSpeechUI.text = npcSpeech.npcWouldLikeBook2.ToString();
                                 break;
+                            case 3:
+                                npcSpeechUI.text = npcSpeech.npcWouldLikeBook3.ToString();
+                                break;
+                            case 4:
+                                npcSpeechUI.text = npcSpeech.npcWouldLikeBook4.ToString();
+                                break;
                         }
                     }
                     
                     break;
+                    /////
                 case 1:
-                    npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
-                    break;
+                    if (firstSpeech1)
+                    {
+                        firstSpeech1 = false;
+                        npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
+                    }
+                    else
+                    {
+                        switch (Random.Range(0, 4))
+                        {
+                            case 0:
+                                npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
+                                break;
+                            case 1:
+                                npcSpeechUI.text = npcSpeech.npcLostKey1.ToString();
+                                break;
+                            case 2:
+                                npcSpeechUI.text = npcSpeech.npcLostKey2.ToString();
+                                break;
+                            case 3:
+                                npcSpeechUI.text = npcSpeech.npcLostKey3.ToString();
+                                break;
+                            
+                        }
+                    }
+                        break;
                 case 2:
                     npcSpeechUI.text = npcSpeech.npcLostKey0.ToString();
                     break;

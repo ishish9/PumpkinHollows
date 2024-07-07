@@ -15,5 +15,10 @@ MonoBehaviour:
   npcWouldLikeBook0: Sure wish I had a good book to read while fishing.
   npcWouldLikeBook1: Great night for fishing.
   npcWouldLikeBook2: Haven't caught anything yet.
+  npcWouldLikeBook3: Quiet night ...
+  npcWouldLikeBook4: No bites yet
+  npcWouldLikeBook5: 
   npcLostKey0: 'Hmm...Now where did I put my keys? '
-  npcLostKey1: 
+  npcLostKey1: Hmm.... Where did I put it?
+  npcLostKey2: I just got done fishing . . . where could my keys be?
+  npcLostKey3: Have you seen any keys laying around?

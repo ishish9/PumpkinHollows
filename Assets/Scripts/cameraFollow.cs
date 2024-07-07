@@ -9,49 +9,24 @@ public class cameraFollow : MonoBehaviour
     ShakeCamera shakeCamera;
     public Vector3 offset;
     public bool isShakeing;
+    delegate void ChangeAngle(Transform t);
+    //public static event ChangeAngle changeAngle;
 
     private void Start()
     {
         shakeCamera = GetComponent<ShakeCamera>();
+        //changeAngle += ChangeCameraAngle;
     }
     void Update()
+    {    
+       // transform.position = target.position + offset;
+        Vector3 desiredp = target.position + offset;
+        Vector3 smoothedp = Vector3.Lerp(transform.position, desiredp, smoothSpeed * Time.deltaTime);
+        transform.position = smoothedp;
+    }
+
+    public void ChangeCameraAngle(Transform tmpTarget)
     {
-        if (shakeCamera.ShakeStatus() == false)
-        {
-            transform.position = target.position + offset;
-        }
-        else
-        {
-
-        }
-
 
     }
 }
-
-
-
-/*
-public Transform target;
-public float smoothSpeed = 0.125f;
-
-public Vector3 offset;
-
-
-void LateUpdate()
-{
-    transform.position = target.position + offset;
-
-
-}
-
-
-/*void LateUpdate()
-{
-    Vector3 desiredp = target.position + offset;
-    Vector3 smoothedp = Vector3.Lerp(transform.position, desiredp, smoothSpeed * Time.deltaTime);
-    transform.position = smoothedp;
-
-
-}
-*/
