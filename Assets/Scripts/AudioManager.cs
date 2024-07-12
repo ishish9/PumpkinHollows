@@ -3,7 +3,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    [SerializeField] private AudioSource MusicSource, EffectsSource, EffectsSourceLoop;
+    [SerializeField] private AudioSource MusicSource, EffectsSource, EffectsSourceLooped;
     private float defaultPitch;
 
     void Awake()
@@ -34,12 +34,12 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySoundLooped(AudioClip clip)
     {
-        EffectsSource.PlayOneShot(clip);
+        EffectsSourceLooped.PlayOneShot(clip);
     }
 
     public void PlaySoundLoopedStop()
     {
-        EffectsSourceLoop.Stop();
+        EffectsSourceLooped.Stop();
     }
 
     public void PlaySoundDelayed(AudioClip clip, float delay)

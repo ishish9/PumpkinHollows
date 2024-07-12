@@ -6,7 +6,8 @@ public class Seed : MonoBehaviour
 {
     [SerializeField] private AudioClip SeedCollectedSound;
     [SerializeField] private GameObject Prefab;
-    [SerializeField] private int AddAmount;
+    public delegate void Score(int num);
+    public static event Score OnScore;
 
     void Update()
     {
@@ -17,7 +18,7 @@ public class Seed : MonoBehaviour
     {
         AudioManager.Instance.PlaySound(SeedCollectedSound);      
         Instantiate(Prefab, transform.position, transform.rotation);     
-       // score.ScoreAdd1(AddAmount);
+        OnScore(1);
         gameObject.SetActive(false);
     }
 }

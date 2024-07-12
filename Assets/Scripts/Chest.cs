@@ -20,7 +20,7 @@ public class Chest : MonoBehaviour
     [SerializeField] private AudioClips audioClipObject;
     private bool ChestUnopened = true;
     [SerializeField] private Vector3 Spread = new Vector3(0.1f, 0.1f, 0.1f);
-    private Vector3 offset = new Vector3(0, 8, 0);
+    private Vector3 offset = new Vector3(0, 6, 0);
 
 
     private void OnTriggerEnter(Collider collision)
@@ -41,8 +41,8 @@ public class Chest : MonoBehaviour
                         yield return new WaitForSeconds(1);
                         light.SetActive(true);
                         AudioManager.Instance.PlaySound(audioClipObject.TaDa);
-                        Instantiate(Prefab, transform.position + offset, Quaternion.identity);
-                        //ParticlePrefab.Play();
+                        //Instantiate(Prefab, transform.position + offset, Quaternion.identity);
+                        ParticlePrefab.Play();
                         //InvokeRepeating("SpawnObject", 0, DelayBetweenObjSpawn);
                         //SpawnObject();
                         
@@ -59,6 +59,8 @@ public class Chest : MonoBehaviour
                     IEnumerator openChest0()
                     {
                         yield return new WaitForSeconds(1);
+                        light.SetActive(true);
+
                         AudioManager.Instance.PlaySound(audioClipObject.TaDa);
                         Instantiate(keyPrefab, transform.position + new Vector3(0, 3, 0), Quaternion.EulerRotation(0,0,90));
                     }
@@ -74,6 +76,8 @@ public class Chest : MonoBehaviour
                     IEnumerator openChest1()
                     {
                         yield return new WaitForSeconds(1);
+                        light.SetActive(true);
+
                         AudioManager.Instance.PlaySound(audioClipObject.TaDa);
                     }
                     break;
@@ -88,6 +92,8 @@ public class Chest : MonoBehaviour
                     IEnumerator openChest2()
                     {
                         yield return new WaitForSeconds(1);
+                        light.SetActive(true);
+
                         AudioManager.Instance.PlaySound(audioClipObject.TaDaBad);
                     }
                     break;
@@ -102,6 +108,8 @@ public class Chest : MonoBehaviour
                     IEnumerator openChest3()
                     {
                         yield return new WaitForSeconds(1);
+                        light.SetActive(true);
+
                         AudioManager.Instance.PlaySound(audioClipObject.TaDa);
                     }
                     break;
