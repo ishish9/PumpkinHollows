@@ -12,11 +12,13 @@ public class AudioClips : ScriptableObject
     public AudioClip Stomp;
 
     [Header("Collectable Sounds")]
+    public AudioClip CollectSeed;
     public AudioClip CollectCoin;
     public AudioClip CollectCoinBush;
     public AudioClip BushShake;
-
     public AudioClip GetPowerUp;
+    public AudioClip InventoryPickup;
+
 
     [Header("Chest Sounds")]
     public AudioClip ChestOpen;

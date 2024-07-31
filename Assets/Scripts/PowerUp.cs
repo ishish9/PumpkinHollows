@@ -32,7 +32,7 @@ public class PowerUp : MonoBehaviour
     private void PickUp(Collider player)
     {
         //PickUpEffect.transform.position = transform.position;
-        AudioManager.Instance.PlaySound(audioClips.GetPowerUp);
+        AudioManager.instance.PlaySound(audioClips.GetPowerUp);
         Instantiate(PickUpEffect, transform.position, Quaternion.identity);
         playerController = player.GetComponent<controller>();
         switch (powerupType)

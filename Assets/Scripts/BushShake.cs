@@ -14,7 +14,7 @@ public class BushShake : MonoBehaviour
         //RandomCoin = Random.Range(0, 1);
         if (collider.gameObject.tag == "Player")
         {
-            AudioManager.Instance.PlaySound(audioClip.BushShake);
+            AudioManager.instance.PlaySound(audioClip.BushShake);
             Animation.Play(ShakeAnimation, 0, 0.0f);
         }
         
@@ -31,7 +31,7 @@ public class BushShake : MonoBehaviour
 
     private void EmitCoin()
     {
-        AudioManager.Instance.PlaySound(audioClip.CollectCoinBush);
+        AudioManager.instance.PlaySound(audioClip.CollectCoinBush);
         PS.Play();
     }
 }

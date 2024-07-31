@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Seed : MonoBehaviour
 {
-    [SerializeField] private AudioClip SeedCollectedSound;
     [SerializeField] private GameObject Prefab;
     public delegate void Score(int num);
     public static event Score OnScore;
@@ -16,7 +15,6 @@ public class Seed : MonoBehaviour
 
     private void OnTriggerEnter()
     {
-        AudioManager.Instance.PlaySound(SeedCollectedSound);      
         Instantiate(Prefab, transform.position, transform.rotation);     
         OnScore(1);
         gameObject.SetActive(false);

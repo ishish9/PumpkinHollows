@@ -7,7 +7,6 @@ public class CoinTrigger : MonoBehaviour
     List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
     private ParticleSystem ps;
     private int numEnter;
-    [SerializeField] private AudioClips audioClip;
     public delegate void Score(int num);
     public static event Score OnScore;
 
@@ -26,7 +25,6 @@ public class CoinTrigger : MonoBehaviour
             p.remainingLifetime = 0;
             enter[i] = p;
         }
-        AudioManager.Instance.PlaySound(audioClip.CollectCoin);
         OnScore(1);      
         ps.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
     }

@@ -10,7 +10,7 @@ public class WindForce : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        AudioManager.Instance.PlaySoundLooped(audioClips.Wind);
+        AudioManager.instance.PlaySoundLooped(audioClips.Wind);
         leaves.SetActive(true);
     }
 
@@ -21,7 +21,7 @@ public class WindForce : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        AudioManager.Instance.PlaySoundLoopedStop();
+        AudioManager.instance.PlaySoundLoopedStop();
         leaves.SetActive(false);
     }
 }

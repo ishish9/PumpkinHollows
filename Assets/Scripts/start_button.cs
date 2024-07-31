@@ -13,7 +13,7 @@ public class start_button : MonoBehaviour
 
     public void startbutton()
     {
-        AudioManager.Instance.PlayMusic(Music);
+        AudioManager.instance.PlayMusic(Music);
         MainCamera.SetActive(true);
         menu.SetActive(false);
         pumpkin.SetActive(true);

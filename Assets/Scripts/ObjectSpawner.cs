@@ -37,7 +37,7 @@ public class ObjectSpawner : MonoBehaviour
     {
 
         spawnAmount++;
-        AudioManager.Instance.PlaySound(projectileLaunchClip);
+        AudioManager.instance.PlaySound(projectileLaunchClip);
         var projectile = Instantiate(obj, spawnLocation.position, obj.transform.rotation);
         projectile.GetComponent<Rigidbody>().velocity = spawnLocation.up * spawnForce;
         Parent.Add(projectile);

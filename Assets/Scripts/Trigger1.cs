@@ -24,7 +24,7 @@ public class Trigger1 : MonoBehaviour
             {
                 MainGateRight.Play(openRight, 0, 0.0f);
                 MainGateLeft.Play(openLeft, 0, 0.0f);
-                AudioManager.Instance.PlaySound(doorOpen);
+                AudioManager.instance.PlaySound(doorOpen);
                 gameObject.SetActive(false);
             }
 
@@ -32,7 +32,7 @@ public class Trigger1 : MonoBehaviour
             {
                 MainGateRight.Play(closeRight, 0, 0.0f);
                 MainGateLeft.Play(closeLeft, 0, 0.0f);
-                AudioManager.Instance.PlaySound(doorClose);
+                AudioManager.instance.PlaySound(doorClose);
                 gameObject.SetActive(false);
             }
         }

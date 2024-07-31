@@ -9,7 +9,7 @@ public class GraveShake : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            AudioManager.Instance.PlaySound(Shake);
+            AudioManager.instance.PlaySound(Shake);
             GraveShakeAnimation.Play("Grave_Shake", 0, 0.0f);
         }
     }

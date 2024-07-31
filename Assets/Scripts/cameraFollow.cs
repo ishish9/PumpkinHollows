@@ -27,6 +27,6 @@ public class cameraFollow : MonoBehaviour
 
     public void ChangeCameraAngle(Transform tmpTarget)
     {
-
+        //offset
     }
 }

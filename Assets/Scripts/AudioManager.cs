@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance;
+    public static AudioManager instance;
     [SerializeField] private AudioSource MusicSource, EffectsSource, EffectsSourceLooped;
     private float defaultPitch;
 
     void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
             //DontDestroyOnLoad(gameObject);
         }
         else

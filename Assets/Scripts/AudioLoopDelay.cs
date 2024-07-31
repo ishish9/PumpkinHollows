@@ -29,7 +29,7 @@ public class AudioLoopDelay : MonoBehaviour
         {
             for (int i = 0; i < LoopAudioAmount; i++)
             {
-                AudioManager.Instance.PlaySound(AudioClip);
+                AudioManager.instance.PlaySound(AudioClip);
                 yield return new WaitForSeconds(Delay);
             }
         }
@@ -44,7 +44,7 @@ public class AudioLoopDelay : MonoBehaviour
         {
             while (LoopAudioContinues)
             {
-                AudioManager.Instance.PlaySound(AudioClip);
+                AudioManager.instance.PlaySound(AudioClip);
                 yield return new WaitForSeconds(Delay);
             }
         }

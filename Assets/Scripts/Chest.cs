@@ -31,7 +31,7 @@ public class Chest : MonoBehaviour
             {
                 case ChestType.Coins:
                     ChestUnopened = false;
-                    AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
+                    AudioManager.instance.PlaySound(audioClipObject.ChestOpen);
                     Chest_Open.Play("Chest_Open", 0, 0.0f);
 
                     StartCoroutine(openChest());
@@ -40,7 +40,7 @@ public class Chest : MonoBehaviour
                     {
                         yield return new WaitForSeconds(1);
                         light.SetActive(true);
-                        AudioManager.Instance.PlaySound(audioClipObject.TaDa);
+                        AudioManager.instance.PlaySound(audioClipObject.TaDa);
                         //Instantiate(Prefab, transform.position + offset, Quaternion.identity);
                         ParticlePrefab.Play();
                         //InvokeRepeating("SpawnObject", 0, DelayBetweenObjSpawn);
@@ -51,7 +51,7 @@ public class Chest : MonoBehaviour
                     ///
                 case ChestType.Key:
                     ChestUnopened = false;
-                    AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
+                    AudioManager.instance.PlaySound(audioClipObject.ChestOpen);
                     Chest_Open.Play("Chest_Open", 0, 0.0f);
 
                     StartCoroutine(openChest0());
@@ -61,14 +61,14 @@ public class Chest : MonoBehaviour
                         yield return new WaitForSeconds(1);
                         light.SetActive(true);
 
-                        AudioManager.Instance.PlaySound(audioClipObject.TaDa);
+                        AudioManager.instance.PlaySound(audioClipObject.TaDa);
                         Instantiate(keyPrefab, transform.position + new Vector3(0, 3, 0), Quaternion.EulerRotation(0,0,90));
                     }
                     break;
                     ///
                 case ChestType.Mystery:
                     ChestUnopened = false;
-                    AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
+                    AudioManager.instance.PlaySound(audioClipObject.ChestOpen);
                     Chest_Open.Play("Chest_Open", 0, 0.0f);
 
                     StartCoroutine(openChest1());
@@ -78,13 +78,13 @@ public class Chest : MonoBehaviour
                         yield return new WaitForSeconds(1);
                         light.SetActive(true);
 
-                        AudioManager.Instance.PlaySound(audioClipObject.TaDa);
+                        AudioManager.instance.PlaySound(audioClipObject.TaDa);
                     }
                     break;
                     ///
                 case ChestType.Empty:
                     ChestUnopened = false;
-                    AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
+                    AudioManager.instance.PlaySound(audioClipObject.ChestOpen);
                     Chest_Open.Play("Chest_Open", 0, 0.0f);
 
                     StartCoroutine(openChest2());
@@ -94,13 +94,13 @@ public class Chest : MonoBehaviour
                         yield return new WaitForSeconds(1);
                         light.SetActive(true);
 
-                        AudioManager.Instance.PlaySound(audioClipObject.TaDaBad);
+                        AudioManager.instance.PlaySound(audioClipObject.TaDaBad);
                     }
                     break;
                     ///
                 case ChestType.Crystal:
                     ChestUnopened = false;
-                    AudioManager.Instance.PlaySound(audioClipObject.ChestOpen);
+                    AudioManager.instance.PlaySound(audioClipObject.ChestOpen);
                     Chest_Open.Play("Chest_Open", 0, 0.0f);
 
                     StartCoroutine(openChest3());
@@ -110,7 +110,7 @@ public class Chest : MonoBehaviour
                         yield return new WaitForSeconds(1);
                         light.SetActive(true);
 
-                        AudioManager.Instance.PlaySound(audioClipObject.TaDa);
+                        AudioManager.instance.PlaySound(audioClipObject.TaDa);
                     }
                     break;
                     ///

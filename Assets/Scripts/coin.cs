@@ -17,7 +17,7 @@ public class coin : MonoBehaviour
         {
             Debug.Log("Collider!");
 
-            AudioManager.Instance.PlaySound(audioClip.CollectCoin);
+            AudioManager.instance.PlaySound(audioClip.CollectCoin);
             OnCollectCoin(1);
             gameObject.SetActive(false);
         }
@@ -28,7 +28,7 @@ public class coin : MonoBehaviour
         if (other.collider.name == "Player_Pumpkin")
         {
             Debug.Log("Collisioin!");
-            AudioManager.Instance.PlaySound(audioClip.CollectCoin);
+            AudioManager.instance.PlaySound(audioClip.CollectCoin);
             OnCollectCoin(1);
             gameObject.SetActive(false);
         }

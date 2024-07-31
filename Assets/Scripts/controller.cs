@@ -76,7 +76,7 @@ public class controller : MonoBehaviour
             jumpAnimation.Play("jump", 0, 0.0f);
             particlejump.position = target.position;
             particle.Play();
-            AudioManager.Instance.PlaySound(audioClipObject.Jump);
+            AudioManager.instance.PlaySound(audioClipObject.Jump);
             Debug.Log("Jump");
         }
         // DoubleJumps
@@ -88,8 +88,7 @@ public class controller : MonoBehaviour
             jumpAnimation.Play("jump", 0, 0.0f);
             particlejump.position = target.position;
             particle.Play();
-            AudioManager.Instance.PlaySound(audioClipObject.JumpDouble);
-            Debug.Log("Double Jump");
+            AudioManager.instance.PlaySound(audioClipObject.JumpDouble);
         }
     }
 
@@ -104,8 +103,7 @@ public class controller : MonoBehaviour
             rb.AddForce(new Vector3(0, -9, 0), ForceMode.Impulse);
             particlejump.position = target.position;
             particle.Play();
-            AudioManager.Instance.PlaySound(audioClipObject.Stomp);
-            Debug.Log("Stomp");
+            AudioManager.instance.PlaySound(audioClipObject.Stomp);
             transform.LookAt(LookTarget);
         }
     }
@@ -140,7 +138,7 @@ public class controller : MonoBehaviour
             if (HasJumped == true)
             {
                 HasJumped = false;
-                AudioManager.Instance.PlaySound(audioClipObject.Land);
+                AudioManager.instance.PlaySound(audioClipObject.Land);
                 particlejump.position = target.position;
                 particle.Play();
             }
@@ -182,5 +180,10 @@ public class controller : MonoBehaviour
             yield return new WaitForSeconds(10);
             rb.AddForce(new Vector3(0, 2, 0), ForceMode.Impulse);
         }
+    }
+
+    public bool GetGroundedstatus()
+    {
+        return PlayerIsGrounded;
     }
 }
